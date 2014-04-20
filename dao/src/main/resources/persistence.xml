@@ -6,11 +6,12 @@
 	<persistence-unit name="brainwarsPU">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<class>com.ddi.brainwars.domain.entity.User</class>
+		<class>com.ddi.brainwars.domain.entity.Role</class>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 			<property name="hibernate.show_sql" value="false" />
 			<property name="hibernate.hbm2ddl.auto" value="create" />
-			<property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.DefaultNamingStrategy" />
+			<property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy" />
 			<property name="hibernate.query.factory_class"
 				value="org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory" />
 		</properties>
