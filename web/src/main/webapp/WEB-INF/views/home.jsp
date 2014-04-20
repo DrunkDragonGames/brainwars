@@ -3,8 +3,6 @@
 <html>
 	<head>
 		<title>Home</title>
-		<link href='http://fonts.googleapis.com/css?family=Molle:400italic' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet' type='text/css'>
 	</head>
 	<body style="background: url('http://www.corporateriskwatch.com/html/BGnoise.gif');">
 		<div style="text-align: right;margin: 10px">
