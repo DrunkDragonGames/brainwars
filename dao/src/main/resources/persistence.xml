@@ -7,6 +7,7 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<class>com.ddi.brainwars.domain.entity.User</class>
 		<class>com.ddi.brainwars.domain.entity.Role</class>
+		<class>com.ddi.brainwars.domain.entity.Player</class>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 			<property name="hibernate.show_sql" value="false" />

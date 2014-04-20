@@ -1,22 +1,32 @@
 package com.ddi.brainwars.domain.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Users")
+@Table(name = "users")
 public class User {
 
 	@Id
 	@GeneratedValue
-	private Long id;
+	private Long userId;
 	private String login;
 	private String password;
 	private String firstName;
 	private String lastName;
 	private String emailAddress;
+	private boolean isEnabled;
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "role_id")
+	private Role role;
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "player_id")
+	private Player player;
 
 	public String getLogin() {
 		return login;
@@ -58,12 +68,28 @@ public class User {
 		this.emailAddress = emailAddress;
 	}
 
-	public Long getId() {
-		return id;
+	public boolean isEnabled() {
+		return isEnabled;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setEnabled(boolean isEnabled) {
+		this.isEnabled = isEnabled;
+	}
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
 	}
 
 }
