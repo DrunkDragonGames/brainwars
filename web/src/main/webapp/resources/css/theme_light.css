@@ -1,5 +1,17 @@
-@CHARSET "UTF-8";
+@CHARSET "UTF-8"; 
 
-body {
-	
-}
+body.theme-light {background: #e6e6e6; color: #333;}
+
+.theme-light p {}
+
+.theme-light span {}
+
+.theme-light a {color: #333;}
+
+.theme-light .block {background: #333;}
+
+.theme-light .border_medium {border-color: #333;}
+
+.theme-light .block {box-shadow: 0px 0px 1px 1px #FFF; color: #fff;}
+
+.theme-light .static-wrapper .interactive .chat .message .message-text {background: #fff;}

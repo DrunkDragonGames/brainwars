@@ -1,7 +1,8 @@
 define([ 
         'jquery', 
         'underscore', 
-        'backbone', 
+        'backbone',
+        'animation',
         'views/action/list',
 	'views/game/list', 
 	'views/item/list', 
@@ -11,6 +12,7 @@ define([
     		$,
     		_,
     		Backbone, 
+    		Animtion,
     		ActionListView,
     		GameListView,
     		ItemListView,
