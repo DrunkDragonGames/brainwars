@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+
+body {
+	margin-top: 0px;
+	height: 100%;
+	text-align: center;
+	overflow: hidden;
+	font-size: 14px;
+	font-family: verdana;
+}
