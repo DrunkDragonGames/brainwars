@@ -7,12 +7,12 @@
     http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
 	<http pattern="/login*" security="none" />
-	<http pattern="/css/**" security="none" />
-	<http pattern="/js/**" security="none" />
+	<http pattern="/resources/**" security="none" />
 
 	<http auto-config='true'>
 		<intercept-url pattern="/**" access="ROLE_USER" />
-		<form-login login-page='/login' />
+		<form-login login-page='/login' default-target-url="/home" />
+		
 	</http>
 
 	<authentication-manager>

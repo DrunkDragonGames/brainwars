@@ -25,21 +25,27 @@ public class HomeController {
 
 	@Autowired
 	private UserService userService;
-	
+
 	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String index(Locale locale, Model model) {
+
+		return "home";
+	}
+
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 
 		return "home";
 	}
-	
+
 	@RequestMapping(value = "/getAllUsers", method = RequestMethod.GET)
 	public String getAllUsers(Locale locale, Model model) {
 		Iterable<User> users = userService.findAll();
 		System.out.println(users);
-		
+
 		List<User> user = userService.findByLastName("Smirnov");
 		System.out.println(user);
-		
+
 		return "home";
 	}
 

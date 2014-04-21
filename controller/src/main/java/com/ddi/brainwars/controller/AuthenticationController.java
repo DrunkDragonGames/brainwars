@@ -21,7 +21,7 @@ public class AuthenticationController {
 	private static final Logger logger = LoggerFactory
 			.getLogger(AuthenticationController.class);
 
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	@RequestMapping(value = "/login")
 	public String login(Locale locale, Model model) {
 
 		return "login";
