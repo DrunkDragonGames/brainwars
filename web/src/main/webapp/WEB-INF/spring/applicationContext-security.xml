@@ -12,7 +12,6 @@
 
 	<http auto-config='true'>
 		<intercept-url pattern="/**" access="ROLE_USER" />
-		<form-login login-page='/login' />
 	</http>
 
 	<authentication-manager>
