@@ -10,8 +10,8 @@ body.theme-dark {background: #333; color: #fff;}
 
 .theme-dark .block {background: #fff}
 
-.theme-dark .border_medium {border-color: #fff;}
+.theme-dark .border_medium {border-color: #e6e6e6;}
 
-.theme-dark .block {box-shadow: 0px 0px 1px 1px #333; color: #333;}
+.theme-dark .block {box-shadow: 0px 0px 1px 1px #000; color: #333;}
 
-.theme-dark .static-wrapper .interactive .chat .message .message-text {background: #333;}
+.theme-dark .static-wrapper .interactive .chat .message .message-text {background: #e6e6e6; color: #333;}
