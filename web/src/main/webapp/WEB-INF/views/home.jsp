@@ -66,8 +66,9 @@
 	<div class="static-wrapper">
 		<div class="interactive">
 			<div class="top right outer-block">
-				<span class="clicable right-link" title="help">?</span> <a
-					class="clicable right-link" href="/logout">Logout</a>
+				<a class="clicable right-link" href="${pageContext.request.contextPath}/api">API</a>
+				<span class="clicable right-link" title="help">?</span> 
+				<a class="clicable right-link" href="/logout">Logout</a>
 			</div>
 			<div class="bottom right outer-block">
 				<span class="clicable right-link" id="switch-theme-button" title="switch theme" >Switch</span>

@@ -31,22 +31,11 @@ public class HomeController {
 
 		return "home";
 	}
+	
+	@RequestMapping(value = "/api", method = RequestMethod.GET)
+	public String api() {
 
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-
-		return "home";
-	}
-
-	@RequestMapping(value = "/getAllUsers", method = RequestMethod.GET)
-	public String getAllUsers(Locale locale, Model model) {
-		Iterable<User> users = userService.findAll();
-		System.out.println(users);
-
-		List<User> user = userService.findByLastName("Smirnov");
-		System.out.println(user);
-
-		return "home";
+		return "api";
 	}
 
 }
