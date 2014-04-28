@@ -4,23 +4,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
-<tag:head title="login" />
-<div class="container">
-	<div class="block">
-		<form class="block-inner-small" id="login-form" method="post" action="j_spring_security_check">
-			<div class="login-block-row">
-				<span class="login-block-row-title">LOGIN</span> 
-				<input id="login" type="text" name="j_username" required="required" autocomplete="off" title="Input your login here">
+<tag:head title="THE BRAIN WARS" />
+<div class="page">
+			<div class="header">
+				<p style="font-size: 52px;">Hello stranger!</p>
+				<p style="font-size: 52px;">and welcome to</p>
+				<p style="font-size: 145px;">THE BRAIN WARS</p>
 			</div>
-			<div class="login-block-row">
-				<span class="login-block-row-title">PASS</span>
-				<input  id="password" name="j_password" type="password" required="required" autocomplete="off" title="Input your password here">
-			</div>
-			<div class="login-block-row">
-				<input class="big-blue-button" id="login-submit" type="submit" name="login-button" value="Log In">
-			</div>
-		</form>
-	</div>
-</div>
+			<form class="entry"method="post" action="j_spring_security_check">
+				<P>What is your name?</P>
+				<input type="text" class="user-name" name="j_username" placeholder=""/>
+				<input type="password" class="user-password" name="j_password" placeholder=""/>
+				<input type="submit" class="log-in" value="let's go"/>
+			</form>
+		</div>
 <tag:footer />
 </html>

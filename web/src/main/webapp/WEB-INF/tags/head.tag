@@ -13,6 +13,7 @@
 <link rel="stylesheet" type="text/css" href="/brainwars/resources/css/jquery-ui-1.9.2.custom.css"></link>
 <link rel="stylesheet" type="text/css" href="/brainwars/resources/css/theme_dark.css"></link>
 <link rel="stylesheet" type="text/css" href="/brainwars/resources/css/theme_light.css"></link>
+<link rel="stylesheet" type="text/css" href="/brainwars/resources/css/login.css"></link>
 <style type="text/css"></style>
 </head>
 
