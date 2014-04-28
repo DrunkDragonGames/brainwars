@@ -11,8 +11,8 @@
 <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css"> -->
 <link rel="stylesheet" type="text/css" href="/brainwars/resources/css/style.css"></link>
 <link rel="stylesheet" type="text/css" href="/brainwars/resources/css/jquery-ui-1.9.2.custom.css"></link>
-<link rel="stylesheet" type="text/css" href="/brainwars/resources/css/theme_light.css"></link>
 <link rel="stylesheet" type="text/css" href="/brainwars/resources/css/theme_dark.css"></link>
+<link rel="stylesheet" type="text/css" href="/brainwars/resources/css/theme_light.css"></link>
 <style type="text/css"></style>
 </head>
 

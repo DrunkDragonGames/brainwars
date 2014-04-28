@@ -8,6 +8,6 @@ require.config({
 
 });
 
-require([ 'router', ], function(Router) {
-    Router.initialize();
+require([ 'app', ], function(app) {
+    app.initialize();
 });

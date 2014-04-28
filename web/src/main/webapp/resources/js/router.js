@@ -1,60 +1,101 @@
-define([ 
-        'jquery', 
-        'underscore', 
-        'backbone',
-        'animation',
-        'views/action/list',
-	'views/game/list', 
-	'views/item/list', 
-	'views/page/list',
-	'views/player/list'], 
-	function(
-    		$,
-    		_,
-    		Backbone, 
-    		Animtion,
-    		ActionListView,
-    		GameListView,
-    		ItemListView,
-    		PageListView, 
-    		PlayerListView
-		) {
-    
-    var AppRouter = Backbone.Router.extend({
-	routes : {
-	    // Define some URL routes
-	    '/game' : 'showGameModes',
-	    '/users' : 'showUsers',
-	    '*actions' : 'defaultAction'// Default
-	}
-    });
+define([ 'jquery', 'underscore', 'backbone', 'animation', 'views/game/view' ], function($, _, Backbone, Animtion, GameView) {
 
-    var initialize = function() {
-	var _router = new AppRouter;
-	
-	_router.on('showPages', function() {
-	    var pageListView = new PageListView();
-	    pageListView.render();
+	var Controller = Backbone.Router.extend({
+		content_el : $('.content'),
+		navigation_el : $('.navigation'),
+		routes : {
+			'game' : 'showGamePage',
+			'news' : "showNewsPage",
+			'forum' : 'showForumPage',
+			'community' : 'showCommunityPage',
+			'market' : 'showMarketPage',
+
+			'duel' : 'startDuel',
+			'arcade' : 'startArcade',
+			'group' : 'startGroup',
+			'challenge' : 'startChallenge',
+
+		},
+
+		
+		//Game Modes
+		startDuel : function(query, data) {
+			var view = 	new GameView([{mode : 'duel'}]);
+			Animtion.showLoading("Searching for opponent...")
+			view.render( Animtion.hideLoading);
+		},
+		
+		startArcade : function() {
+			var view = 	new GameView("arcade");
+			view.render();
+		},
+		
+		startGroup : function() {
+			var view = 	new GameView("group");
+			view.render();
+		},
+		
+		startChallenge : function() {
+			var view = 	new GameView("challenge");
+			view.render();
+		},
+
+		
+		//Navigation
+		showGamePage : function() {
+			this.loadPage('game');
+		},
+
+		showNewsPage : function() {
+			this.loadPage('news');
+		},
+
+		showForumPage : function() {
+			this.loadPage('forum');
+		},
+
+		showCommunityPage : function() {
+			this.loadPage('community');
+		},
+
+		showMarketPage : function() {
+			this.loadPage('market');
+		},
+
+		loadPage : function(path, data, success) {
+			var _controller = this;
+			$.ajax({
+				url : path,
+				data : data,
+				method : 'GET',
+				success : function(data) {
+					_controller.changePage(_controller.content_el, data,
+							Animtion.fadeInOut);
+					_controller.updateNavigatin(path);
+					if ($.isFunction(success)) {
+						success();
+					}
+				}
+			});
+		},
+
+		changePage : function(el, content, animation) {
+			animation(el, 300, function() {
+				el.html(content);
+			});
+		},
+
+		updateNavigatin : function(path) {
+			this.navigation_el.find("li").each(function(index, element) {
+				$(element).removeClass('selected');
+			});
+			this.navigation_el.find("li[title = '" + path + "']").addClass(
+					'selected');
+		}
+
 	});
-	_router.on('showGames', function() {
-	    var gameListView = new GameListView();
-	    gameListView.render();
-	});
-	_router.on('showPlayers', function() {
-	    var playerListView = new PlayerListView();
-	    playerListView.render();
-	});
-	_router.on('showItemss', function() {
-	    var itemListView = new ItemListView();
-	    itemListView.render();
-	});
-	_router.on('defaultAction', function(actions) {
-	    console.log('No route:', actions);
-	});
-	
+
+	var controller = new Controller;
 	Backbone.history.start();
-    };
-    return {
-	initialize : initialize
-    };
+	return controller;
 });

@@ -1,30 +1,41 @@
 //This module contains all animations bindings
 define([ 'jquery', 'underscore', 'backbone' ], function($, _, Backbone) {
-    
-    $('#games-tab-triger').click(function(){
-	$(this).html('[ Games ]').addClass('tab-title-active').removeClass('tab-title-disable');
-	$('#history-tab-triger').html('History').addClass('tab-title-disable').removeClass('tab-title-active');
-	$('.history-tab').animate({ opacity: '0'},666);
-	$('.history-tab').css('display','none');
-	$('.games-tab').css('display','block');
-	$('.games-tab').animate({ opacity: '1'},666);
+
+	var Animation = {
+			
+		loader_el : $('.loader'),
+
+		fadeInOut : function(el, duration, callback) {
+			el.animate({opacity : '0'}, duration, function() {
+				callback();
+			});
+			el.animate({opacity : '1'}, duration);
+		},
 	
+		showLoading : function(text) {
+			this.loader_el.text(text);
+			this.loader_el.animate({opacity : '1'}, 0.3);
+		},
+		
+		hideLoading : function() {
+			this.loader_el.animate({opacity : '0'}, 0.5, function(){
+				this.loader_el.text("Loading...");
+			});
+		}
+	};
+	
+
+	$('#switch-theme-button').click(function() {
+		if ($("body").hasClass("theme-dark")) {
+			$("body").removeClass("theme-dark");
+			$("body").addClass("theme-light");
+		} else {
+			$("body").removeClass("theme-light");
+			$("body").addClass("theme-dark");
+		}
+
+	});
+
+	return Animation;
+
 });
-
-$('#switch-theme-button').click(function(){
-    
-   if($("body").hasClass("theme-dark")){
-       $("body").removeClass("theme-dark");
-       $("body").addClass("theme-light");
-   } else {
-       $("body").removeClass("theme-light");
-       $("body").addClass("theme-dark");
-   }
-    
-});
-
-
-  
-
-});
-
