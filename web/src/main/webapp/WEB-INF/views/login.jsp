@@ -13,8 +13,8 @@
 			</div>
 			<form class="entry"method="post" action="j_spring_security_check">
 				<P>What is your name?</P>
-				<input type="text" class="user-name" name="j_username" placeholder=""/>
-				<input type="password" class="user-password" name="j_password" placeholder=""/>
+				<input type="text" class="user-name" name="j_username" placeholder="   user name"/>
+				<input type="password" class="user-password" name="j_password" placeholder="   password"/>
 				<input type="submit" class="log-in" value="let's go"/>
 			</form>
 		</div>

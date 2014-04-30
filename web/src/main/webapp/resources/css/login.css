@@ -2,7 +2,7 @@ body{width:100%; height:100%; margin:0px; padding:0px; background: url(images/BG
 .page {width: 1000px; height: 100%; margin: 0px 135px; position: relative;}
 .header{ margin-top: 230px;}
 .header p{ font-family: Chiller; margin: -10px; text-align: center;}
-.entry{ display: inline-block; margin-top: 50px; position: relative; float: left; left: 40%;}
+.entry{ display: inline-block; margin-top: 145px; margin-left: -85px; position: relative; float: left; left: 40%;}
 .entry p{ font-family: Chiller; font-size: 30px; margin: 5px;}
 .user-name, .user-password{ border: 3px solid #e7e7e7; border-radius: 7px; outline: none; width: 175px; height: 30px;}
 .user-name:focus, .user-password:focus{ border: 3px solid #000;}
